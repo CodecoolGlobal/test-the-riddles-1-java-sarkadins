@@ -30,14 +30,17 @@ public class CreateQuizStep {
     }
 
     @Given("I am logged in as quiz master")
-    public void i_logged_in_registered_user() {
+    public void i_logged_in_registered_user() throws InterruptedException {
         driver.get(baseUrl);
+        Thread.sleep(399);
         loginPage.handleLogin(userName, password);
+        Thread.sleep(399);
+
         System.out.println("Logged in as a quiz master");
     }
 
     @When("I create a quiz with {string} {string} {string} {string}")
-    public void i_create_a_quiz_with_quizTitle_questionTitle_answer1_answer2(String quizTitle, String questionTitle, String answer1, String answer2){
+    public void i_create_a_quiz_with_quizTitle_questionTitle_answer1_answer2(String quizTitle, String questionTitle, String answer1, String answer2) throws InterruptedException {
         driver.get(allQuizUrl);
         quizPage.addQuizWithFirstAnswerIsCorrect(quizTitle, questionTitle, answer1, answer2);
         System.out.println("Create a quiz with first answer correct");

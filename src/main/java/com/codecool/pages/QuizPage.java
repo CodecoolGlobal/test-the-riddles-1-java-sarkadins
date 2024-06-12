@@ -19,7 +19,7 @@ public class QuizPage extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(6));
     }
 
-    @FindBy(css = "[class='grow pt-16'] button")
+    @FindBy(xpath = "/html//div[@id='root']/div/div[2]//button[.='Add Quiz']")
     private WebElement addQuizButton;
     @FindBy(id = "name")
     private WebElement quizTitleField;
@@ -48,7 +48,8 @@ public class QuizPage extends BasePage {
     @FindBy(css = "[class='grow flex align-middle text-lg pl-2 items-center']")
     private WebElement checkQuizTitle;
 
-    private void clickAddQuiz(){
+    private void clickAddQuiz() throws InterruptedException {
+        Thread.sleep(344);
         wait.until(ExpectedConditions.visibilityOf(addQuizButton)).click();
     }
     private void enterQuizTitle(String quizTitle){

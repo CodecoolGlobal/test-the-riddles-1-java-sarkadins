@@ -33,9 +33,11 @@ public class DeleteQuizStep {
     }
 
     @Given("I am logged in as quiz master and i create a new quiz with {string} {string} {string} {string}")
-    public void i_logged_in_registered_user(String quizTitle, String questionTitle, String answer1, String answer2) {
+    public void i_logged_in_registered_user(String quizTitle, String questionTitle, String answer1, String answer2) throws InterruptedException {
         driver.get(baseUrl);
+        Thread.sleep(233);
         loginPage.handleLogin(userName, password);
+        Thread.sleep(233);
         driver.get(allQuizUrl);
         quizPage.addQuizWithFirstAnswerIsCorrect(quizTitle, questionTitle, answer1, answer2);
         System.out.println("Logged in as a quiz master and i create a new quiz");
