@@ -31,18 +31,17 @@ public class LoginPage extends BasePage {
 
 
     private void enterUserName(String userName) {
-        userNameField.clear();
-        userNameField.sendKeys(userName);
+        //userNameField.clear();
+        wait.until(ExpectedConditions.visibilityOf(userNameField)).sendKeys(userName);
     }
 
     private void enterPassword(String password) {
-        passwordField.clear();
-        passwordField.sendKeys(password);
+        //passwordField.clear();
+        wait.until(ExpectedConditions.visibilityOf(passwordField)).sendKeys(password);
     }
 
     private void clickChooseLoginButton() {
-        wait.until(ExpectedConditions.visibilityOf(chooseLoginButton));
-        chooseLoginButton.click();
+        wait.until(ExpectedConditions.visibilityOf(chooseLoginButton)).click();
     }
 
     private void clickLoginButton() {

@@ -16,10 +16,10 @@ public class QuizPage extends BasePage {
 
     public QuizPage(WebDriver driver) {
         super(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(6));
     }
 
-    @FindBy(css = ".bg-green-400.m-1.p-1.rounded-full.text-black.w-32")
+    @FindBy(css = "[class='grow pt-16'] button")
     private WebElement addQuizButton;
     @FindBy(id = "name")
     private WebElement quizTitleField;
@@ -45,35 +45,35 @@ public class QuizPage extends BasePage {
     private WebElement saveQuestionButton;
     @FindBy(css = ".bg-green-800.font-bold.mr-4.mt-2.p-4.text-white.w-40")
     private WebElement saveQuizButton;
-    @FindBy(css = ".align-middle.flex.grow.items-center.pl-2.text-lg")
+    @FindBy(css = "[class='grow flex align-middle text-lg pl-2 items-center']")
     private WebElement checkQuizTitle;
 
     private void clickAddQuiz(){
         wait.until(ExpectedConditions.visibilityOf(addQuizButton)).click();
     }
     private void enterQuizTitle(String quizTitle){
-        quizTitleField.clear();
-        quizTitleField.sendKeys(quizTitle);
+        //quizTitleField.clear();
+        wait.until(ExpectedConditions.visibilityOf(quizTitleField)).sendKeys(quizTitle);
     }
     private void clickAddQuestionButton(){
         wait.until(ExpectedConditions.visibilityOf(addQuestionButton)).click();
     }
     private void enterQuestionTitle(String questionTitle){
-        questionTitleField.clear();
-        quizTitleField.sendKeys(questionTitle);
+        //questionTitleField.clear();
+        wait.until(ExpectedConditions.visibilityOf(questionTitleField)).sendKeys(questionTitle);
     }
     private void addAnswerToFirstField(String answer){
-        firstAnswerField.clear();
-        firstAnswerField.sendKeys(answer);
+        //firstAnswerField.clear();
+        wait.until(ExpectedConditions.visibilityOf(firstAnswerField)).sendKeys(answer);
     }
     private void addAnswerToSecondField(String answer){
-        secondAnswerField.clear();
-        secondAnswerField.sendKeys(answer);
+        //secondAnswerField.clear();
+        wait.until(ExpectedConditions.visibilityOf(secondAnswerField)).sendKeys(answer);
     }
     private void addAnswerToThirdField(String answer){
         addMoreQuestionButton.click();
-        thirdAnswerField.clear();
-        thirdAnswerField.sendKeys(answer);
+        //thirdAnswerField.clear();
+        wait.until(ExpectedConditions.visibilityOf(thirdAnswerField)).sendKeys(answer);
     }
     private void clickFirstAnswerCheckbox(){
         firstAnswerCheckbox.click();
@@ -103,10 +103,11 @@ public class QuizPage extends BasePage {
         Alert alertSaveQuestion = driver.switchTo().alert();
         alertSaveQuestion.accept();
         clickSaveQuizButton();
+        wait.until(ExpectedConditions.alertIsPresent());
         Alert alertSaveQuiz = driver.switchTo().alert();
         alertSaveQuiz.accept();
     }
     public String getCreatedQuizTitleText(){
-        return checkQuizTitle.getText();
+        return wait.until(ExpectedConditions.visibilityOf(checkQuizTitle)).getText();
     }
 }
