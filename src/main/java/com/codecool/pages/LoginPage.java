@@ -3,14 +3,21 @@ package com.codecool.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage {
 
+    WebDriverWait wait;
+
     public LoginPage(WebDriver driver) {
         super(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    @FindBy(linkText = "Login")
+    @FindBy(css = "[class='flex items-center gap-x-1'] [href='\\/login'] .lg\\:block")
     private WebElement chooseLoginButton;
 
     @FindBy(id = "user-name")
@@ -34,6 +41,7 @@ public class LoginPage extends BasePage {
     }
 
     private void clickChooseLoginButton() {
+        wait.until(ExpectedConditions.visibilityOf(chooseLoginButton));
         chooseLoginButton.click();
     }
 
