@@ -43,7 +43,7 @@ public class QuizPage extends BasePage {
     private WebElement thirdAnswerCheckbox;
     @FindBy(css = ".bg-green-800.font-bold.m-4.mb-2.p-2.text-white.w-24")
     private WebElement saveQuestionButton;
-    @FindBy(css = ".bg-green-800.font-bold.mr-4.mt-2.p-4.text-white.w-40")
+    @FindBy(xpath = "/html//div[@id='root']/div/div[2]//button[.='Save quiz']")
     private WebElement saveQuizButton;
     @FindBy(css = "[class='grow flex align-middle text-lg pl-2 items-center']")
     private WebElement checkQuizTitle;
@@ -90,7 +90,7 @@ public class QuizPage extends BasePage {
     private void clickSaveQuizButton(){
         saveQuizButton.click();
     }
-    public void addQuizWithFirstAnswerIsCorrect(String quizTitle, String questionTitle, String answer1, String answer2){
+    public void addQuizWithFirstAnswerIsCorrect(String quizTitle, String questionTitle, String answer1, String answer2) throws InterruptedException {
         clickAddQuiz();
         enterQuizTitle(quizTitle);
         clickAddQuestionButton();
@@ -102,6 +102,7 @@ public class QuizPage extends BasePage {
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alertSaveQuestion = driver.switchTo().alert();
         alertSaveQuestion.accept();
+        Thread.sleep(500);
         clickSaveQuizButton();
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alertSaveQuiz = driver.switchTo().alert();
