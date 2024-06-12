@@ -1,2 +1,3 @@
-bdd/step_definitions/LoginStep.class
-bdd/test_running/TestRunning.class
+bdd\step_definitions\LoginStep.class
+bdd\step_definitions\CreateQuizStep.class
+bdd\test_running\TestRunning.class

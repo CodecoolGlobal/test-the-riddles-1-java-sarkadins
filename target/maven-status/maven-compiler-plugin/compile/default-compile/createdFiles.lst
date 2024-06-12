@@ -1,3 +1,4 @@
-com/codecool/pages/BasePage.class
-com/codecool/pages/HomePage.class
-com/codecool/pages/LoginPage.class
+com\codecool\pages\LoginPage.class
+com\codecool\pages\HomePage.class
+com\codecool\pages\BasePage.class
+com\codecool\pages\QuizPage.class

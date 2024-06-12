@@ -2,6 +2,7 @@ package bdd.step_definitions;
 
 import com.codecool.pages.HomePage;
 import com.codecool.pages.LoginPage;
+import com.codecool.pages.QuizPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,7 +15,7 @@ public class CreateQuizStep {
 
     private WebDriver driver;
     private LoginPage loginPage;
-    private HomePage homePage;
+    private QuizPage quizPage;
     private final String baseUrl = System.getenv("BASE_URL");
     private final String allQuizUrl = System.getenv("BASE_URL") + "quiz/all";
     private final String userName = System.getenv("userName");
@@ -25,7 +26,7 @@ public class CreateQuizStep {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
-        homePage = new HomePage(driver);
+        quizPage = new QuizPage(driver);
     }
 
     @Given("I am logged in as quiz master")
@@ -36,20 +37,21 @@ public class CreateQuizStep {
     }
 
     @When("I create a quiz with {string} {string} {string} {string}")
-    public void i_create_a_quiz_with_quizTitle_questionTitle_answer1_answer2(String username, String password) {
-        loginPage.handleLogin(username, password);
-        System.out.println("Type in the username and the password");
+    public void i_create_a_quiz_with_quizTitle_questionTitle_answer1_answer2(String quizTitle, String questionTitle, String answer1, String answer2){
+        driver.get(allQuizUrl);
+        quizPage.addQuizWithFirstAnswerIsCorrect(quizTitle, questionTitle, answer1, answer2);
+        System.out.println("Create a quiz with first answer correct");
     }
 
-    @Then("I see the logout {string}")
-    public void i_see_the_logout_buttonText(String buttonText) {
-        String actualText = homePage.getChooseLogoutButtonText();
-        if (buttonText.equals(actualText)) {
-            System.out.println("Test passed: The actual text matches the expected text.");
+    @Then("I see the {string}")
+    public void i_see_the_quizTitle(String expectedQuizTitle) {
+        String actualQuizTitle = quizPage.getCreatedQuizTitleText();
+        if (expectedQuizTitle.equals(actualQuizTitle)) {
+            System.out.println("Test passed: The actual quiz title matches the expected quiz title.");
         } else {
-            System.out.println("Test failed: The actual text does not match the expected text.");
-            System.out.println("Expected: " + buttonText);
-            System.out.println("Actual: " + actualText);
+            System.out.println("Test failed: The actual quiz title does not match the expected quiz title.");
+            System.out.println("Expected: " + expectedQuizTitle);
+            System.out.println("Actual: " + actualQuizTitle);
         }
     }
 
