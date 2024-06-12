@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -21,9 +20,9 @@ public class LoginStep {
     @Before
     public void setUp() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        System.out.println("fada");
     }
 
     @Given("I am a registered user")
@@ -34,13 +33,6 @@ public class LoginStep {
 
     @When("I try to login with {string} {string}")
     public void i_try_to_login_with_username_password(String username, String password) {
-        boolean isAlreadyLoggedIn;
-        try {
-            isAlreadyLoggedIn = homePage.getChooseLogoutButtonText().equals("Logout");
-        } catch (NoSuchElementException e) {
-            isAlreadyLoggedIn = false;
-        }
-        if (isAlreadyLoggedIn) homePage.clickLogoutButton();
         loginPage.handleLogin(username, password);
         System.out.println("Type in the username and the password");
     }
