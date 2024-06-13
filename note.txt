@@ -1,0 +1,6 @@
+todo:
+- .gitignore
+- Jira documentation (bug reports)
+- readme
+- refactoring
+- is TestRunning.java necessary?

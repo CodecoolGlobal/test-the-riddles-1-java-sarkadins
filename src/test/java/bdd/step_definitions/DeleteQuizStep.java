@@ -51,7 +51,7 @@ public class DeleteQuizStep {
     }
 
     @Then("I should see an empty quiz page {string}")
-    public void i_should_see_an_empty_quiz_page(String expectedMessage) {
+    public void i_should_see_an_empty_quiz_page(String expectedMessage) {  // TODO: then must contain assertion
         driver.get(myQuizUrl);
         String actualMessage = myQuizPage.getCheckEmptyQuizAlertText();
         if (expectedMessage.equals(actualMessage)) {

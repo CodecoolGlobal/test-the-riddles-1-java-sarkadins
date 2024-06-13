@@ -24,4 +24,8 @@ public class HomePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(chooseLogoutButton));
         return chooseLogoutButton.getText();
     }
+
+    public boolean isLogoutButtonVisible() {
+        return chooseLoginButton.isVisible();  // something like this
+    }
 }
