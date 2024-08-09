@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/CodecoolGlobal/el-proyecte-grande-sprint-1-java-Tomocza">
+  <a href="https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/blob/development/src/logo_riddles.png">
     <img src="frontend/src/assets/images/logo_big.png" alt="Logo">
   </a>
 </div>
