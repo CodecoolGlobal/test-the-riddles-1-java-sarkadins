@@ -1,4 +1,23 @@
 
+[![GitHub Contributors][contributors-shield]][contributors-url]
+[![GitHub Forks][forks-shield]][forks-url]
+[![GitHub Stars][stars-shield]][stars-url]
+[![GitHub Issues][issues-shield]][issues-url]
+
+
+ **priusz:** 
+ 
+[![LinkedIn][linkedin-shield]][linkedin-url-one]
+
+**sarkadins:** 
+
+[![LinkedIn][linkedin-shield]][linkedin-url-two]
+
+**idlewombat:** 
+
+[![LinkedIn][linkedin-shield]][linkedin-url-three]
+
+---
 <br />
 <div align="center">
   <a href="https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/blob/development/src/logo_riddles.png">
@@ -12,8 +31,6 @@
   A dynamic, full-stack web application designed to make learning fun through interactive quizzes!
   <br />
 </p>
-
----
 
 ## Table of Contents
 
@@ -91,3 +108,30 @@ This project is a fully dockerized monolith application, making it easy to set u
 [SpringBoot]: https://img.shields.io/badge/SpringBoot-000000?style=for-the-badge&logo=SpringBoot
 [psql]: https://img.shields.io/badge/postgresql-000000?style=for-the-badge&logo=postgresql
 
+[contributors-shield]: https://img.shields.io/github/contributors/CodecoolGlobal/test-the-riddles-1-java-sarkadins
+
+[contributors-url]: https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/graphs/contributors
+
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+
+[linkedin-url-one]: https://www.linkedin.com/in/timeaboros-priusz/
+
+[linkedin-url-two]: https://www.linkedin.com/in/soma-sarkadi-nagy/
+
+[linkedin-url-three]: https://www.linkedin.com/in/bence-futasz/
+
+[contributors-shield]: https://img.shields.io/github/contributors/CodecoolGlobal/test-the-riddles-1-java-sarkadins
+
+[contributors-url]: https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/graphs/contributors
+
+[forks-shield]: https://img.shields.io/github/forks/CodecoolGlobal/test-the-riddles-1-java-sarkadins?style=social
+
+[forks-url]: https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/forks
+
+[stars-shield]: https://img.shields.io/github/stars/CodecoolGlobal/test-the-riddles-1-java-sarkadins?style=social
+
+[stars-url]: https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/CodecoolGlobal/test-the-riddles-1-java-sarkadins
+
+[issues-url]: https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/issues
