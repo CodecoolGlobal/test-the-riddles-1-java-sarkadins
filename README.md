@@ -1,7 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/blob/development/src/logo_riddles.png">
-    <img src="frontend/src/assets/images/logo_big.png" alt="Logo">
+    <img src="https://github.com/CodecoolGlobal/test-the-riddles-1-java-sarkadins/blob/development/src/logo_riddles.png" alt="Logo" width="59%">
   </a>
 </div>
 <h3 align="center">Reptile Riddles</h3>
